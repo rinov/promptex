@@ -40,13 +40,25 @@ pip install -e .
 
 In Promptex, Some of fundamental elements that make up a prompt for Generative Pre-trained Transformer (GPT) models. These elements, each with a specific role and priority, form the building blocks for creating effective prompts:
 
-ROLE: This element indicates the role of the prompt.
-INSTRUCTION: This element provides specific instructions to guide the GPT model's response.
-CONSTRAINT: This element defines any constraints or limitations that the GPT model should adhere to while generating a response.
-CONTEXT: This element gives the context or background information necessary for understanding the prompt.
-INPUT_DATA: This element represents the specific input data that the GPT model needs to generate a response.
-OUTPUT_FORMAT: This element specifies the desired format of the model's output.
+```
+ROLE:
+- This element indicates the role of the prompt.
 
+INSTRUCTION:
+- This element provides specific instructions to guide the GPT model's response.
+
+CONSTRAINT:
+- This element defines any constraints or limitations that the GPT model should adhere to while generating a response.
+
+CONTEXT:
+- This element gives the context or background information necessary for understanding the prompt.
+
+INPUT_DATA:
+- This element represents the specific input data that the GPT model needs to generate a response.
+
+OUTPUT_FORMAT:
+- This element specifies the desired format of the model's output.
+```
 
 ## Getting Started
 
@@ -138,7 +150,7 @@ print(f"Token consumption: {token_count}")
 
 print(f"Stats: {json.dumps(stats, indent=2, ensure_ascii=False)}")
 
-
+"""
 Token consumption: 27
 Stats: {
   "element_count": {
@@ -173,6 +185,7 @@ Stats: {
     "total": 27
   }
 }
+"""
 ```
 
 ### Encoding a prompt as JSON
