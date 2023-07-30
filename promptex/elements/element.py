@@ -43,10 +43,10 @@ class Element:
                 elements_of_type = [
                     element.text
                     for element in self.elements
-                    if element.type == element_type.value
+                    if element.type == element_type
                 ]
                 if elements_of_type:
-                    data[element_type.value] = elements_of_type
-            return {self.type.value: data}
+                    data[element_type] = elements_of_type
+            return {self.type: data}
         else:
-            return {self.type.value: self.text}
+            return {self.type: self.text}

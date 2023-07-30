@@ -86,10 +86,11 @@ class Promptex:
         token_count = len(encoded)
         return token_count
 
-    def get_stats(self, encoding_model_name="gpt-4") -> Dict[str, Any]:
+    def get_stats(self, text, encoding_model_name="gpt-4") -> Dict[str, Any]:
         """
         Get statistics about the elements in the prompt.
         :seealso: https://github.com/openai/tiktoken/blob/main/tiktoken/model.py
+        :param text: The prompt text to get the statistics
         :param encoding_model_name: gpt-4, gpt-3.5-turbo, text-davinci-001, etc..
         :return: A dictionary with statistics
         """
@@ -143,9 +144,9 @@ class Promptex:
                     "element_count"
                 ][element_type]
 
-        stats["text_length"]["total"] = len(self.get_prompt_text())
+        stats["text_length"]["total"] = len(text)
         stats["token_count"]["total"] = self.get_token_count(
-            text=self.get_prompt_text(),
+            text=text,
             encoding_model_name=encoding_model_name,
         )
 
