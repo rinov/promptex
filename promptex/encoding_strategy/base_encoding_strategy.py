@@ -1,17 +1,20 @@
 from abc import ABC, abstractmethod
-from promptex import Promptex
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from ..promptex import Promptex  # Use type checking for circular import
 
 
 class BaseEncodingStrategy(ABC):
     @abstractmethod
-    def encode(self, promptex: Promptex) -> str:
+    def encode(self, promptex: "Promptex") -> str:
         """
-        Encode a list of elements into a string.
+        Encodes the given Promptex object into a string representation.
 
         Args:
-            elements (List[Element]): List of elements to encode.
+            promptex (Promptex): The Promptex object to encode.
 
         Returns:
-            str: Encoded string.
+            str: The encoded string representation of the prompt.
         """
         pass
